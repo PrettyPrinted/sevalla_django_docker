@@ -14,6 +14,4 @@ COPY . .
 
 RUN SECRET_KEY=dummy DATABASE_URL=sqlite:///db.sqlite3 python3 manage.py collectstatic --no-input
  
-EXPOSE $PORT
- 
 CMD ["gunicorn", "example.wsgi"]
