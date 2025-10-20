@@ -7,12 +7,10 @@ RUN mkdir /app
 WORKDIR /app
  
 RUN pip install --upgrade pip 
- 
-COPY requirements.txt  /app/
- 
+COPY requirements.txt  .
 RUN pip install --no-cache-dir -r requirements.txt
  
-COPY . /app/
+COPY . .
 
 RUN SECRET_KEY=dummy DATABASE_URL=sqlite:///db.sqlite3 python3 manage.py collectstatic --no-input
  
