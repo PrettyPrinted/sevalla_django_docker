@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 ARG SECRET_KEY
+ARG DATABASE_URL
 
 RUN python3 manage.py collectstatic --no-input
  
