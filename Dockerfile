@@ -12,6 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
  
 COPY . .
 
-RUN SECRET_KEY=dummy DATABASE_URL=sqlite:///db.sqlite3 python3 manage.py collectstatic --no-input
+RUN python3 manage.py collectstatic --no-input
  
 CMD ["gunicorn", "example.wsgi"]
