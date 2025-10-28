@@ -12,6 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
  
 COPY . .
 
+ARG SECRET_KEY
+
 RUN python3 manage.py collectstatic --no-input
  
 CMD ["gunicorn", "example.wsgi"]
